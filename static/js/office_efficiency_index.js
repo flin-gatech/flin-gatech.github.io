@@ -24,11 +24,11 @@ function loadChannelBaseInfo(data){
 	var channelDeviceInfo=data.channelDeviceInfo;
 	var finalDeviceScore=channelDeviceInfo.finalDeviceScore || 0;
 	if(finalDeviceScore<=0){
-		$("#base-info .device-score").find("img").attr("src","../static/images/star3.png");
+		$("#base-info .device-score").find("img").attr("src","static/images/star3.png");
 	}else if(finalDeviceScore<0.95){
-		$("#base-info .device-score").find("img").attr("src","../static/images/star2.png");
+		$("#base-info .device-score").find("img").attr("src","static/images/star2.png");
 	}else{
-		$("#base-info .device-score").find("img").attr("src","../static/images/star1.png");
+		$("#base-info .device-score").find("img").attr("src","static/images/star1.png");
 	}
 	$("#base-info .device-score").find(".score-val").text(finalDeviceScore+"分");
 	
@@ -39,20 +39,20 @@ function loadChannelBaseInfo(data){
 	//设置门店基本信息-违规行为
 	var channelStartWeiGui=staffHandleInfo.channelStartWeiGui || 0;
 	if(channelStartWeiGui==1){
-		$("#base-info .weigui").find("img").attr("src","../static/images/star1.png");
+		$("#base-info .weigui").find("img").attr("src","static/images/star1.png");
 	}else{
-		$("#base-info .weigui").find("img").attr("src","../static/images/star3.png");
+		$("#base-info .weigui").find("img").attr("src","static/images/star3.png");
 	}
 	$("#base-info .weigui").find(".score-val").text(channelStartWeiGui+"分");
 	//设置门店基本信息-营销评级
 	var yingxiaoval=1-popval;
 	yingxiaoval=keepTwoDecimal(yingxiaoval);
 	if(yingxiaoval<=0){
-		$("#base-info .yingxiao").find("img").attr("src","../static/images/star3.png");
+		$("#base-info .yingxiao").find("img").attr("src","static/images/star3.png");
 	}else if(yingxiaoval<0.95){
-		$("#base-info .yingxiao").find("img").attr("src","../static/images/star2.png");
+		$("#base-info .yingxiao").find("img").attr("src","static/images/star2.png");
 	}else{
-		$("#base-info .yingxiao").find("img").attr("src","../static/images/star1.png");
+		$("#base-info .yingxiao").find("img").attr("src","static/images/star1.png");
 	}
 	$("#base-info .yingxiao").find(".score-val").text(yingxiaoval+"分");
 
@@ -67,11 +67,11 @@ function loadChannelBaseInfo(data){
 	avgTimeScore=keepTwoDecimal(avgTimeScore*0.5+0.5);
 	avgTimeScore=avgTimeScore>1?1:avgTimeScore;
 	if(avgTimeScore<=0){
-		$("#base-info .avgtime").find("img").attr("src","../static/images/star3.png");
+		$("#base-info .avgtime").find("img").attr("src","static/images/star3.png");
 	}else if(avgTimeScore<0.95){
-		$("#base-info .avgtime").find("img").attr("src","../static/images/star2.png");
+		$("#base-info .avgtime").find("img").attr("src","static/images/star2.png");
 	}else{
-		$("#base-info .avgtime").find("img").attr("src","../static/images/star1.png");
+		$("#base-info .avgtime").find("img").attr("src","static/images/star1.png");
 	}
 	$("#base-info .avgtime").find(".score-val").text(avgTimeScore+"分");
 	//设置门店基本信息-业务量
@@ -93,11 +93,11 @@ function loadChannelBaseInfo(data){
 	yewuliangVal=keepTwoDecimal(yewuliangVal*0.5+0.5);
 	yewuliangVal=yewuliangVal>1?1:yewuliangVal;
 	if(yewuliangVal<=0){
-		$("#base-info .yewuliang").find("img").attr("src","../static/images/star3.png");
+		$("#base-info .yewuliang").find("img").attr("src","static/images/star3.png");
 	}else if(yewuliangVal<0.95){
-		$("#base-info .yewuliang").find("img").attr("src","../static/images/star2.png");
+		$("#base-info .yewuliang").find("img").attr("src","static/images/star2.png");
 	}else{
-		$("#base-info .yewuliang").find("img").attr("src","../static/images/star1.png");
+		$("#base-info .yewuliang").find("img").attr("src","static/images/star1.png");
 	}
 	$("#base-info .yewuliang").find(".score-val").text(yewuliangVal+"分");
 	//设置门店基本信息-排队机耗时
@@ -112,13 +112,13 @@ function loadChannelBaseInfo(data){
 	$("#base-info").find(".chanenl-star").empty();
 	var starLen=Math.floor(channelTotalScore);
 	for(var idx=0;idx<starLen;idx++){
-		var img='<img src="../static/images/star1.png"/>';
+		var img='<img src="static/images/star1.png"/>';
 		$("#base-info").find(".chanenl-star").append(img);
 	}
 	$("#base-info").find(".chanenl-star").append('<div>'+channelTotalScore+'分</div>');
 	
 	if(starLen<channelTotalScore){
-		var img='<img src="../static/images/star2.png" style="width:21px;height:20px;"/>';
+		var img='<img src="static/images/star2.png" style="width:21px;height:20px;"/>';
 		$("#base-info").find("#chanenl-star").append(img);
 	}
 	var unit="";
@@ -482,37 +482,37 @@ function loadChannelDeviceDetail(data) {
             var deviceIcon = "";
             switch (item.detail) {
                 case "家用汽车":
-                    deviceIcon = "../static/images/car-icon.png"; // Ensure correct path
+                    deviceIcon = "static/images/car-icon.png"; // Ensure correct path
                     break;
                 case "助力车":
-                    deviceIcon = "../static/images/scooter-icon.png";
+                    deviceIcon = "static/images/scooter-icon.png";
                     break;
                 case "洗衣机":
-                    deviceIcon = "../static/images/washing-machine-icon.png";
+                    deviceIcon = "static/images/washing-machine-icon.png";
                     break;
                 case "电冰箱（柜）":
-                    deviceIcon = "../static/images/fridge-icon.png";
+                    deviceIcon = "static/images/fridge-icon.png";
                     break;
                 case "微波炉":
-                    deviceIcon = "../static/images/microwave-icon.png";
+                    deviceIcon = "static/images/microwave-icon.png";
                     break;
                 case "彩色电视机":
-                    deviceIcon = "../static/images/tv-icon.png";
+                    deviceIcon = "static/images/tv-icon.png";
                     break;
                 case "空调":
-                    deviceIcon = "../static/images/ac-icon.png";
+                    deviceIcon = "static/images/ac-icon.png";
                     break;
                 case "热水器":
-                    deviceIcon = "../static/images/heater-icon.png";
+                    deviceIcon = "static/images/heater-icon.png";
                     break;
                 case "排油烟机":
-                    deviceIcon = "../static/images/vent-hood-icon.png";
+                    deviceIcon = "static/images/vent-hood-icon.png";
                     break;
                 case "移动电话":
-                    deviceIcon = "../static/images/phone-icon.png";
+                    deviceIcon = "static/images/phone-icon.png";
                     break;
                 case "计算机":
-                    deviceIcon = "../static/images/computer-icon.png";
+                    deviceIcon = "static/images/computer-icon.png";
                     break;
                 default:
                     deviceIcon = ""; // No icon, avoid placeholder
@@ -590,37 +590,37 @@ function getDeviceIcon(item) {
     var deviceIcon = "";
     switch (item.detail) {
         case "家用汽车":
-            deviceIcon = "../static/images/car-icon.png"; // Ensure correct path
+            deviceIcon = "static/images/car-icon.png"; // Ensure correct path
             break;
         case "助力车":
-            deviceIcon = "../static/images/scooter-icon.png";
+            deviceIcon = "static/images/scooter-icon.png";
             break;
         case "洗衣机":
-            deviceIcon = "../static/images/washing-machine-icon.png";
+            deviceIcon = "static/images/washing-machine-icon.png";
             break;
         case "电冰箱（柜）":
-            deviceIcon = "../static/images/fridge-icon.png";
+            deviceIcon = "static/images/fridge-icon.png";
             break;
         case "微波炉":
-            deviceIcon = "../static/images/microwave-icon.png";
+            deviceIcon = "static/images/microwave-icon.png";
             break;
         case "彩色电视机":
-            deviceIcon = "../static/images/tv-icon.png";
+            deviceIcon = "static/images/tv-icon.png";
             break;
         case "空调":
-            deviceIcon = "../static/images/ac-icon.png";
+            deviceIcon = "static/images/ac-icon.png";
             break;
         case "热水器":
-            deviceIcon = "../static/images/heater-icon.png";
+            deviceIcon = "static/images/heater-icon.png";
             break;
         case "排油烟机":
-            deviceIcon = "../static/images/vent-hood-icon.png";
+            deviceIcon = "static/images/vent-hood-icon.png";
             break;
         case "移动电话":
-            deviceIcon = "../static/images/phone-icon.png";
+            deviceIcon = "static/images/phone-icon.png";
             break;
         case "计算机":
-            deviceIcon = "../static/images/computer-icon.png";
+            deviceIcon = "static/images/computer-icon.png";
             break;
         default:
             deviceIcon = ""; // No icon, avoid placeholder
@@ -904,7 +904,7 @@ function noDataTip($selector){
 	var top=currModH>180?"35%":"13%";
 	var $li=[
         "<div class='no-data' style='width:90%;position: absolute;top:"+top+";text-align:center;color:#a59999;'>",
-		   "<img src='../static/images/no-data.png' style='width:200px;height:200px;'/>",
+		   "<img src='static/images/no-data.png' style='width:200px;height:200px;'/>",
 		   "<div style='font-size:16px;opacity:0.7;color:#fff;'>暂无数据</div>",
         "</div>"
     ]
